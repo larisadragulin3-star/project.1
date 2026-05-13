@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+}
+
+
+
+.hero{
+    
+    height:100vh
+    width: 100%;
+    position:relative;
+}
+
+
+.hero-img img {
+     width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.hero-text{
+    position:absolute;
+    top:40%;
+    left:10%;
+    background:#27c499;
+    color:white;
+    padding:10px 20px;
+    font-weight:bold;
+}
+
+.icon{
+    font-size:40px;
+    color:#27c499;
+}
+
+.section-title{
+    margin:60px 0 30px;
+    font-weight:bold;
+;
+}
+
+.card img{
+    height:160px;
+    object-fit:cover;
+    
+
+}
+
+footer{
+    background:#111;
+    color:#ccc;
+    padding:40px 0;
+    padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  flex: 1 1 300px; 
+  margin-right: 20px;
+}
+
+.footer-right {
+  display: flex;
+  flex: 1 1 300px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-column {
+  flex: 1 1 140px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-left {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .footer-right {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-column {
+    flex: 1 1 100%;
+  }
+}
+
+footer h5{
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-light">
+<div class="container">
+<a class="navbar-brand" href="#">My Website</a>
+
+<button class="navbar-toggler" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Staff</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Download</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-img">
+        <img src="imgs/hero.jpg">
+    </div>
+<div class="hero-text">
+We strive to make all of our creations exquisite.
+</div>
+</section>
+
+<!-- FEATURES -->
+<section class="container text-center">
+<div class="row mt-5">
+
+<div class="col-md-3">
+<div class="icon"> <img src="imgs/icon-1.png" alt=""></div>
+<h5>Purpose</h5>
+<p>Lorem ipsum dolor sit amet elit.</p>
+</div>
+
+<div class="col-md-3">
+<div class="icon"> <img src="imgs/icon-2.png" alt=""></div>
+<h5>Quality</h5>
+<p>Lorem ipsum dolor sit amet elit.</p>
+</div>
+
+<div class="col-md-3">
+<div class="icon"><img src="imgs/icon-3.png" alt=""></div>
+<h5>Function</h5>
+<p>Lorem ipsum dolor sit amet elit.</p>
+</div>
+
+<div class="col-md-3">
+<div class="icon"><img src="imgs/icon-4.png" alt=""></div>
+<h5>Elegant</h5>
+<p>Lorem ipsum dolor sit amet elit.</p>
+</div>
+
+</div>
+</section>
+
+<!-- RECENT WORK -->
+<section class="container">
+<h4 class="section-title">RECENT WORK</h4>
+
+<div class="row g-4">
+
+<div class="col-md-3 col-sm-6">
+<div class="card">
+<img src="imgs/bike-400x340.jpg">
+<div class="card-body">
+<b>Green Bike</b><br>
+<small>Beautiful, Travel</small>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="card">
+<img src="imgs/surf-400x340.jpg">
+<div class="card-body">
+<b>Salt Of The Earth</b><br>
+<small>Beautiful, Travel</small>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="card">
+<img src="imgs/hills-400x340.jpg">
+<div class="card-body">
+<b>Mountain High</b><br>
+<small>Travel</small>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="card">
+<img src="imgs/path-400x340.jpg">
+<div class="card-body">
+<b>When A Tree Falls</b><br>
+<small>Beautiful</small>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- BLOG -->
+<section class="container">
+<h4 class="section-title">FROM THE BLOG</h4>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card">
+<img src="imgs/cow-640x340.jpg">
+<div class="card-body">
+<b>How Now</b>
+<p class="small text-muted">Posted on October 28, 2020</p>
+<p>Lorem ipsum dolor sit amet consectetur.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="imgs/sunrise-640x340.jpg">
+<div class="card-body">
+<b>Adrift by Simon Christen</b>
+<p class="small text-muted">Posted on September 29, 2020</p>
+<p>Lorem ipsum dolor sit amet consectetur.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card">
+<img src="imgs/grass-640x340.jpg">
+<div class="card-body">
+<b>A Walk In The Park</b>
+<p class="small text-muted">Posted on August 10, 2020</p>
+<p>Lorem ipsum dolor sit amet consectetur.</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-left">
+      <h3>My Website</h3>
+      <p>
+        Quisque id dolor leo. Vivamus tincidunt in diam ac
+        condimentum. Quisque rutrum dolor dolor, non
+        tincidunt tellus sollicitudin vitae. Mauris a dolor ut
+        nibh volutpat aliquet. Sed dictum magna eu massa
+        accumsan, sit amet viverra ligula gravida. Nam
+        vehicula ut leo aliquet sodales.
+      </p>
+    </div>
+
+    
+    <div class="footer-right">
+      <div class="footer-column">
+        <h3>Recent Posts</h3>
+        <ul>
+          <li>How Now</li>
+          <li>Adrift by Simon Christen</li>
+          <li>A Walk In The Park</li>
+          <li>Time To Think</li>
+          <li>Field Of Dreams</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Recent Work</h3>
+        <ul>
+          <li>Beautiful</li>
+          <li>Travel</li>
+          <li>Surreal</li>
+          <li>Thoughts</li>
+          <li>Unique</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-4">
+<small>© 2020 ITAcademy</small>
+</div>
+
+</div>
+</footer>
+
+</body>
+</html>
