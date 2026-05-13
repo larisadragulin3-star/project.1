@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Animatie cerc</title>
+
+  <style>
+    /* reset de bază */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #050210;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* cercul principal */
+    .cerc {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: linear-gradient(
+        45deg,
+        #fb5dad,
+        #55fb9f,
+        #b97aff
+      );
+      position: relative;
+      animation: rotire 3s linear infinite;
+    }
+
+    /* glow exterior */
+    .cerc::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      border-radius: 50%;
+      background: linear-gradient(
+        45deg,
+        #fb5dad,
+        #55fb9f,
+        #b97aff
+      );
+      filter: blur(25px);
+    }
+
+    /* cerc interior + lumina */
+    .cerc::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+      border-radius: 50%;
+      background: #050210;
+      animation: lumina 2s ease-in-out infinite;
+    }
+
+    /* animație rotație */
+    @keyframes rotire {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* animație lumină din centru */
+    @keyframes lumina {
+      0% {
+        box-shadow: 0 0 20px #fb5dad;
+      }
+      50% {
+        box-shadow:
+          0 0 40px #fb5dad,
+          0 0 60px #55fb9f,
+          0 0 80px #b97aff;
+      }
+      100% {
+        box-shadow: 0 0 20px #fb5dad;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cerc"></div>
+
+</body>
+</html>

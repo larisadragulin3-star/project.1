@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2 - Website Building</title>
+    <!-- Font Awesome pentru iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        #login-container {
+            width: 460px;
+            margin: 0 auto;
+        }
+
+        form label,
+        form input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form input {
+            padding: 8px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form div {
+            margin: 16px 0px;
+            position: relative; /* pentru iconițe */
+        }
+
+        /* Stil pentru iconițe */
+        .input-container i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            display: none;
+        }
+
+        .error-icon {
+            color: red;
+            display: block;
+        }
+
+        .success-icon {
+            color: green;
+            display: block;
+        }
+
+        .error {
+            border-color: red;
+        }
+
+        .success {
+            border-color: green;
+        }
+
+        .error-messages {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .success-message {
+            color: green;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login-container">
+        <form id="login-form" novalidate>
+            <div class="input-container">
+                <label for="username">Username:</label>
+                <input id="username" type="text">
+                <i class="fas fa-times error-icon"></i>
+                <i class="fas fa-check success-icon"></i>
+            </div>
+
+            <div class="input-container">
+                <label for="password">Password:</label>
+                <input id="password" type="password">
+                <i class="fas fa-times error-icon"></i>
+                <i class="fas fa-check success-icon"></i>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <div id="messages"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('login-form');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const messagesDiv = document.getElementById('messages');
+
+        const correctUsername = 'new_user';
+        const correctPassword = '123456789';
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // prevenim trimiterea formularului
+
+            // Resetare stiluri și mesaje
+            messagesDiv.innerHTML = '';
+            resetInput(usernameInput);
+            resetInput(passwordInput);
+
+            let errors = [];
+
+            // Validare username
+            if (usernameInput.value.trim() === '') {
+                errors.push('please enter username');
+                markError(usernameInput);
+            } else if (usernameInput.value.trim() !== correctUsername) {
+                errors.push('please enter a valid username');
+                markError(usernameInput);
+            } else {
+                markSuccess(usernameInput);
+            }
+
+            // Validare password
+            if (passwordInput.value.trim() === '') {
+                errors.push('please enter password');
+                markError(passwordInput);
+            } else if (passwordInput.value.trim() !== correctPassword) {
+                errors.push('please enter a valid password');
+                markError(passwordInput);
+            } else {
+                markSuccess(passwordInput);
+            }
+
+            // Afisare mesaje
+            if (errors.length > 0) {
+                messagesDiv.innerHTML = errors.map(err => `<div class="error-messages">${err}</div>`).join('');
+            } else {
+                messagesDiv.innerHTML = `<div class="success-message">Successful login!</div>`;
+            }
+        });
+
+        function markError(input) {
+            input.classList.add('error');
+            const errorIcon = input.parentElement.querySelector('.error-icon');
+            const successIcon = input.parentElement.querySelector('.success-icon');
+            errorIcon.style.display = 'block';
+            successIcon.style.display = 'none';
+        }
+
+        function markSuccess(input) {
+            input.classList.add('success');
+            const errorIcon = input.parentElement.querySelector('.error-icon');
+            const successIcon = input.parentElement.querySelector('.success-icon');
+            successIcon.style.display = 'block';
+            errorIcon.style.display = 'none';
+        }
+
+        function resetInput(input) {
+            input.classList.remove('error', 'success');
+            const errorIcon = input.parentElement.querySelector('.error-icon');
+            const successIcon = input.parentElement.querySelector('.success-icon');
+            errorIcon.style.display = 'none';
+            successIcon.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>

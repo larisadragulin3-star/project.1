@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <title>Mini Calculator</title>
+</head>
+<body>
+<script>
+(function(){
+
+  // 1. prima valoare
+  let a = prompt("Introdu primul număr:");
+  if (a === null) return;
+  a = parseFloat(a.replace(',', '.'));
+
+
+  // validare
+  if (isNaN(a)) {
+    alert("Prima valoare nu este un număr.");
+    return;
+  }
+
+  // 2. operatorul
+  let op = prompt("Introdu operația (+, -, *, /):");
+  if (op === null) return;
+
+  if (!['+','-','*','/'].includes(op)) {
+    alert("Operator invalid.");
+    return;
+  }
+
+  // 3. al doilea număr
+  let b = prompt("Introdu al doilea număr:");
+  if (b === null) return;
+   b = parseFloat(b.replace(',', '.'));
+
+
+  if (isNaN(b)) {
+    alert("A doua valoare nu este un număr.");
+    return;
+  }
+
+  // 4. calcul
+  let result;
+  switch(op){
+    case '+': result = a + b; break;
+    case '-': result = a - b; break;
+    case '*': result = a * b; break;
+    case '/':
+      if (b === 0) {
+        alert("Eroare: împărțire la zero.");
+        return;
+      }
+      result = a / b;
+      break;
+  }
+
+  // 5. afișare rezultat
+  alert("Rezultatul este: " + result);
+
+})();
+</script>
+</body>
+</html>

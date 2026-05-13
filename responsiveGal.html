@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie Responsive</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 1em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1em;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* GALERIE */
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Desktop: 5 coloane */
+  gap: 1em;
+}
+
+.item {
+  background: #e6e6e6;
+  border-radius: 0.5em;
+  overflow: hidden;
+  text-align: center;
+}
+
+.thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.title {
+  padding: 0.5em;
+  background: #f7f7f7;
+  font-size: 0.9em;
+}
+
+/* TABLETĂ: 3 coloane */
+@media (max-width: 1024px) {
+  .galerie {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TELEFON: 1 coloană */
+@media (max-width: 600px) {
+  .galerie {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Galerie Responsive</h2>
+
+  <div class="galerie">
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 1"></div>
+      <div class="title">Titlu 1</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 2"></div>
+      <div class="title">Titlu 2</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 3"></div>
+      <div class="title">Titlu 3</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 4"></div>
+      <div class="title">Titlu 4</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 5"></div>
+      <div class="title">Titlu 5</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 6"></div>
+      <div class="title">Titlu 6</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 7"></div>
+      <div class="title">Titlu 7</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 8"></div>
+      <div class="title">Titlu 8</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 9"></div>
+      <div class="title">Titlu 9</div>
+    </div>
+    <div class="item">
+      <div class="thumb"><img src="placeholder-image/placeholder-image.png" alt="Imagine 10"></div>
+      <div class="title">Titlu 10</div>
+    </div>
+  </div>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a lacinia nisi,
+    nec tristique sem. Cras id tellus ac mauris posuere varius. Pellentesque vel mi justo.
+    Aenean malesuada purus eu lacinia finibus. Praesent commodo euismod odio, eu pharetra
+    nulla dignissim nec.
+  </p>
+</div>
+
+</body>
+</html>
+
+
